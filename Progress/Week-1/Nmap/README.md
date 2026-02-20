@@ -41,6 +41,7 @@ This project provides a **step-by-step Nmap workflow** for recon infrastructure:
 Discover which hosts are alive on the network.
 
 ```
+echo "YOUR-ACTUAL-TARGET-IP" >target.txt
 # Option A: Single target / subnet
 sudo nmap -sn 192.168.1.0/24 -oG - | grep "Up" | awk '{print $2}' > results/live_hosts.txt
 

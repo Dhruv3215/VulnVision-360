@@ -170,7 +170,7 @@ Use the result file from nmap scan and make a single CSV file contain all assets
 
 ## All-In-One Automation Script
 
- Clone this repo for use of automate nmap command execution and csv file generation following by directory structure. 
+ Clone this repo for using script which will automate nmap command execution and csv file generation following by directory structure. 
 
 ### Make it executable:
 

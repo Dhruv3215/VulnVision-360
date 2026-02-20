@@ -1,6 +1,6 @@
 # Week 1 — Network Discovery & Environment Setup
 
-> **Project Phase** : Week 1 of 8 — Vulnerability Assessment Program
+> **Project Phase** : Week 1 of 4 — Vulnerability Assessment Program
 > **Objective**     : Full network discovery, asset inventory, and tooling setup
 > **Status**        : ✅ Complete — Gate Check Passed
 

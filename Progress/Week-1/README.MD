@@ -17,7 +17,7 @@
 
 ## Overview
 
-Week 1 focused on establishing the vulnerability assessment infrastructureand performing comprehensive network reconnaissance. The primary goal wasto discover **100% of live assets** on the internal subnet, fingerprint their operating systems, enumerate all open ports and running services,and compile a structured inventory for use throughout the remaining assessment phases.
+Week 1 focused on establishing the vulnerability assessment infrastructure and performing comprehensive network reconnaissance. The primary goal was to discover **100% of live assets** on the internal subnet, fingerprint their operating systems, enumerate all open ports and running services,and compile a structured inventory for use throughout the remaining assessment phases.
 
 Two core tools were deployed:
 

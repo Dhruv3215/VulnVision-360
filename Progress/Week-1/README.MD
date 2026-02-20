@@ -44,4 +44,4 @@ Kindly read [INSTALL.md](https://github.com/Dhruv3215/VulnVision-360/blob/main/P
 
 ## Nmap Scans 
 
-Kindly read [Nmap.md]() for see nmap commad execution.
+Kindly read [Nmap.md](https://github.com/Dhruv3215/VulnVision-360/blob/main/Progress/Week-1/Nmap/README.md) for see nmap commad execution.

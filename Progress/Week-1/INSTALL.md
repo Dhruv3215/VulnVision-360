@@ -5,7 +5,8 @@ sudo apt update && apt upgrade -y
 ---
 
 ### INSTALLING AND SET-UP OF Greenbone Vulnerability Manager(GVM)
----
+
+
 
 #### THIS COMMAND WILL INSTALL Greenbone Vulnerability Manager(GVM SCANNER) .
 ```
@@ -172,4 +173,5 @@ sudo apt install nmap
 
 
 # Now we have successfully completed installation and set-up Greenbone Vulnerability Manager(GVM) and nmap.
+
 

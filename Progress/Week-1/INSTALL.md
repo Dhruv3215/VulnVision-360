@@ -146,7 +146,8 @@ sudo gvm-start
 
 ### Access the web interface
 
-Open Ip Address displayed at previous result in browser
+>Open Ip Address displayed at previous result in browser
+
 ---
 
 ### Login with given username and password from setup command.
@@ -173,5 +174,6 @@ sudo apt install nmap
 
 
 # Now we have successfully completed installation and set-up Greenbone Vulnerability Manager(GVM) and nmap.
+
 
 

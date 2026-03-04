@@ -73,14 +73,14 @@ Solution :-
 2. Now run aggressive scan on target ip 
     > nmap -A -p- -T3 --script vuln 192.168.91.136 -oN nmap_report.txt -oX nmap_report.xml
 
-| Flag | Purpose |
-|------|---------|
-| `-A` | OS detection, version detection, script scanning, traceroute |
-| `-p-` | Scan all 65,535 TCP ports |
-| `-T3` | Timing template — controls scan speed (Normal) |
-| `--script vuln` | Run Nmap NSE vulnerability detection scripts |
-| `-oN` | Human-readable output |
-| `-oX` | XML output (required for HTML conversion) |
+      | Flag | Purpose |
+      |------|---------|
+      | `-A` | OS detection, version detection, script scanning, traceroute |
+      | `-p-` | Scan all 65,535 TCP ports |
+      | `-T3` | Timing template — controls scan speed (Normal) |
+      | `--script vuln` | Run Nmap NSE vulnerability detection scripts |
+      | `-oN` | Human-readable output |
+      | `-oX` | XML output (required for HTML conversion) |
 
 3. Now convert xml into html report through online xml template
     > xsltproc -o nmap_report.html bootstrap.xsl nmap_report.xml
@@ -125,9 +125,6 @@ Results saved in: "result/"
                         ├── nmap_report.xml         (XML for parsing/tools)"
                         └── nmap_report.html        (interactive HTML report)"
 ```
-
-### Please refer detailed documentation for using my automation script here :- [CLICK HERE](WEEK-1/README.md)
-
 
 ## Evidence Files
 
@@ -498,5 +495,6 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 > *"In the dynamic field of Cybersecurity, you are only as strong as your weakest configuration. Diligence in documentation is paramount. Document every rule, every policy, every firewall exception, and every port you open."*
 >
 > **Trust No One. Verify Everything.**
+
 
 

@@ -1,0 +1,966 @@
+I Summary
+=========
+
+This document reports on the results of an automatic security scan.
+The report first summarises the results found.
+Then, for each host, the report describes every issue found.
+Please consider the advice given in each description, in order to rectify
+the issue.
+
+All dates are displayed using the timezone "Coordinated Universal Time",
+which is abbreviated "UTC".
+
+Vendor security updates are not trusted.
+
+Overrides are off.  Even when a result has an override, this report uses
+the actual threat of the result.
+
+Notes are included in the report.Information on overrides is included in the report.
+
+This report might not show details of all issues that were found.
+Issues with the threat level "Log" are not shown.
+Issues with the threat level "Debug" are not shown.
+Issues with the threat level "False Positive" are not shown.
+Only results with a minimum QoD of 70 are shown.
+
+This report contains all 12 results selected by the
+filtering described above.  Before filtering there were 225 results.
+
+Scan started: Mon Mar 2 15:58:42 2026 UTC
+Scan ended:   Mon Mar 2 16:22:55 2026 UTC
+Task:         INFOTACT UNAUTHORIZED SCAN
+
+Host Summary
+************
+
+Host            Critical  High  Medium  Low  Log  False Positive
+192.168.91.136         0     2       7    3    0               0    UBUNTU
+Total: 1               0     2       7    3    0               0
+
+
+II Results per Host
+===================
+
+Host 192.168.91.136
+*******************
+
+Scanning of this host started at: Mon Mar 2 16:01:59 2026 UTC
+Number of results: 12
+
+Port Summary for Host 192.168.91.136
+------------------------------------
+
+Service (Port)          Threat Level
+161/udp                 High (CVSS: 7.6)
+21/tcp                  High (CVSS: 7.5)
+80/tcp                  Medium (CVSS: 5.8)
+3306/tcp                Medium (CVSS: 5.0)
+23/tcp                  Medium (CVSS: 4.8)
+22/tcp                  Medium (CVSS: 4.3)
+general/tcp             Low (CVSS: 2.6)
+general/icmp            Low (CVSS: 2.1)
+
+Security Issues for Host 192.168.91.136
+---------------------------------------
+
+Issue
+-----
+NVT:    Report default community names of the SNMP Agent
+OID:    1.3.6.1.4.1.25623.1.0.10264
+Threat: High (CVSS: 7.6)
+Port:   161/udp
+
+Summary:
+Simple Network Management Protocol (SNMP) is a protocol which
+  can be used by administrators to remotely manage a computer or network device.!
+ There are typically
+  2 modes of remote SNMP monitoring. These modes are roughly 'READ' and 'WRITE' !
+(or PUBLIC and
+  PRIVATE).
+
+Vulnerability Detection Result:
+SNMP Agent responded as expected when using the following community name:
+private
+public
+
+Impact:
+If an attacker is able to guess a PUBLIC community string, they
+  would be able to read SNMP data (depending on which MIBs are installed) from t!
+he remote device.
+  This information might include system time, IP addresses, interfaces, processe!
+s running, etc.
+  If an attacker is able to guess a PRIVATE community string (WRITE or 'writeall!
+' access), they will
+  have the ability to change information on the remote machine. This could be a !
+huge security hole,
+  enabling remote attackers to wreak complete havoc such as routing network traf!
+fic, initiating
+  processes, etc. In essence, 'writeall' access will give the remote attacker fu!
+ll administrative
+  rights over the remote machine.
+  Note that this test only gathers information and does not attempt to write to !
+the remote device.
+  Thus it is not possible to determine automatically whether the reported commun!
+ity is public or
+  private.
+  Also note that information made available through a guessable community string!
+ might or might not
+  contain sensitive data. Please review the information available through the re!
+ported community
+  string to determine the impact of this disclosure.
+
+Solution:
+Solution type: VendorFix
+Determine if the detected community string is a private
+  community string. Determine whether a public community string exposes sensitiv!
+e information.
+  Disable the SNMP service if you don't use it or change the default community s!
+tring.
+
+Vulnerability Detection Method:
+Details:
+Report default community names of the SNMP Agent
+(OID: 1.3.6.1.4.1.25623.1.0.10264)
+Version used: 2025-10-28T05:40:26Z
+
+References:
+ cve: CVE-1999-0186
+ cve: CVE-1999-0254
+ cve: CVE-1999-0472
+ cve: CVE-1999-0516
+ cve: CVE-1999-0517
+ cve: CVE-1999-0792
+ cve: CVE-2000-0147
+ cve: CVE-2001-0380
+ cve: CVE-2001-0514
+ cve: CVE-2001-1210
+ cve: CVE-2002-0109
+ cve: CVE-2002-0478
+ cve: CVE-2002-1229
+ cve: CVE-2004-0311
+ cve: CVE-2004-1474
+ cve: CVE-2004-1775
+ cve: CVE-2004-1776
+ cve: CVE-2006-4950
+ cve: CVE-2008-1524
+ cve: CVE-2010-1574
+ cve: CVE-2010-2976
+ cve: CVE-2011-0890
+ cve: CVE-2012-4964
+ cve: CVE-2014-4862
+ cve: CVE-2014-4863
+ cve: CVE-2016-1452
+ cve: CVE-2016-1473
+ cve: CVE-2016-5645
+ cve: CVE-2017-7922
+ cve: CVE-2020-5364
+ cve: CVE-2024-5460
+ cve: CVE-2024-8450
+ cve: CVE-2025-12217
+ url: http://www.securityfocus.com/bid/11237
+ url: http://www.securityfocus.com/bid/177
+ url: http://www.securityfocus.com/bid/20125
+ url: http://www.securityfocus.com/bid/2112
+ url: http://www.securityfocus.com/bid/2896
+ url: http://www.securityfocus.com/bid/3758
+ url: http://www.securityfocus.com/bid/3795
+ url: http://www.securityfocus.com/bid/3797
+ url: http://www.securityfocus.com/bid/41436
+ url: http://www.securityfocus.com/bid/4330
+ url: http://www.securityfocus.com/bid/46981
+ url: http://www.securityfocus.com/bid/5030
+ url: http://www.securityfocus.com/bid/5965
+ url: http://www.securityfocus.com/bid/7081
+ url: http://www.securityfocus.com/bid/7212
+ url: http://www.securityfocus.com/bid/7317
+ url: http://www.securityfocus.com/bid/91756
+ url: http://www.securityfocus.com/bid/92428
+ url: http://www.securityfocus.com/bid/9681
+ url: http://www.securityfocus.com/bid/973
+ url: http://www.securityfocus.com/bid/986
+ url: http://www.securityfocus.com/bid/99083
+ cert-bund: WID-SEC-2024-1255
+ cert-bund: CB-K18/1132
+ cert-bund: CB-K16/1338
+ cert-bund: CB-K16/1061
+ dfn-cert: DFN-CERT-2016-1423
+ dfn-cert: DFN-CERT-2016-1130
+ dfn-cert: DFN-CERT-2010-0866
+
+
+Issue
+-----
+NVT:    FTP Brute Force Logins With Default Credentials Reporting
+OID:    1.3.6.1.4.1.25623.1.0.108718
+Threat: High (CVSS: 7.5)
+Port:   21/tcp
+
+Summary:
+It was possible to login into the remote FTP server using
+  weak/known credentials.
+
+Vulnerability Detection Result:
+It was possible to login with the following credentials <User>:<Password>
+admin:admin
+
+Impact:
+This issue may be exploited by a remote attacker to e.g. gain
+  access to sensitive information or modify system configuration.
+
+Solution:
+Solution type: Mitigation
+Change the password as soon as possible.
+
+Vulnerability Insight:
+The following devices are / software is known to be affected:
+  - CVE-2001-1594: Codonics printer FTP service as used in GE Healthcare eNTEGRA!
+ P&R
+  - CVE-2013-7404: GE Healthcare Discovery NM 750b
+  - CVE-2014-9198: Schneider Electric ETG3000 FactoryCast HMI gateways
+  - CVE-2015-7261: QNAP iArtist Lite distributed with QNAP Signage Station
+  - CVE-2016-8731: Foscam C1 devices
+  - CVE-2017-8218: vsftpd on TP-Link C2 and C20i devices
+  - CVE-2018-9068: IMM2 for IBM and Lenovo System x
+  - CVE-2018-17771: Ingenico Telium 2 PoS terminals
+  - CVE-2018-19063, CVE-2018-19064: Foscam C2 and Opticam i5 devices
+  - CVE-2018-25147: Microhard Systems IPn4G
+  - CVE-2020-36915: Adtec Digital SignEdje Digital Signage Player
+  Note: As the VT 'FTP Brute Force Logins With Default Credentials' (OID:
+  1.3.6.1.4.1.25623.1.0.108717) might run into a timeout the actual reporting of!
+ this vulnerability
+  takes place in this VT instead.
+
+Vulnerability Detection Method:
+Reports weak/known credentials detected by the VT
+  'FTP Brute Force Logins With Default Credentials' (OID: 1.3.6.1.4.1.25623.1.0.!
+108717).
+Details:
+FTP Brute Force Logins With Default Credentials Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.108718)
+Version used: 2026-01-16T15:42:49Z
+
+References:
+ cve: CVE-1999-0501
+ cve: CVE-1999-0502
+ cve: CVE-1999-0507
+ cve: CVE-1999-0508
+ cve: CVE-2001-1594
+ cve: CVE-2013-7404
+ cve: CVE-2014-9198
+ cve: CVE-2015-7261
+ cve: CVE-2016-8731
+ cve: CVE-2017-8218
+ cve: CVE-2018-9068
+ cve: CVE-2018-17771
+ cve: CVE-2018-19063
+ cve: CVE-2018-19064
+ cve: CVE-2018-25147
+ cve: CVE-2020-36915
+
+
+Issue
+-----
+NVT:    HTTP Debugging Methods (TRACE/TRACK) Enabled
+OID:    1.3.6.1.4.1.25623.1.0.11213
+Threat: Medium (CVSS: 5.8)
+Port:   80/tcp
+
+Summary:
+The remote web server supports the TRACE and/or TRACK
+  methods. TRACE and TRACK are HTTP methods which are used to debug web server c!
+onnections.
+
+Vulnerability Detection Result:
+The web server has the following HTTP methods enabled: TRACE
+
+Impact:
+An attacker may use this flaw to trick your legitimate web
+  users to give him their credentials.
+
+Solution:
+Solution type: Mitigation
+Disable the TRACE and TRACK methods in your web server
+  configuration.
+  Please see the manual of your web server or the references for more informatio!
+n.
+
+Affected Software/OS:
+Web servers with enabled TRACE and/or TRACK methods.
+
+Vulnerability Insight:
+It has been shown that web servers supporting this methods
+  are subject to cross-site-scripting attacks, dubbed XST for Cross-Site-Tracing!
+, when used in
+  conjunction with various weaknesses in browsers.
+
+Vulnerability Detection Method:
+Checks if HTTP methods such as TRACE and TRACK are
+  enabled and can be used.
+Details:
+HTTP Debugging Methods (TRACE/TRACK) Enabled
+(OID: 1.3.6.1.4.1.25623.1.0.11213)
+Version used: 2023-08-01T13:29:10Z
+
+References:
+ cve: CVE-2003-1567
+ cve: CVE-2004-2320
+ cve: CVE-2004-2763
+ cve: CVE-2005-3398
+ cve: CVE-2006-4683
+ cve: CVE-2007-3008
+ cve: CVE-2008-7253
+ cve: CVE-2009-2823
+ cve: CVE-2010-0386
+ cve: CVE-2012-2223
+ cve: CVE-2014-7883
+ url: http://www.kb.cert.org/vuls/id/288308
+ url: http://www.securityfocus.com/bid/11604
+ url: http://www.securityfocus.com/bid/15222
+ url: http://www.securityfocus.com/bid/19915
+ url: http://www.securityfocus.com/bid/24456
+ url: http://www.securityfocus.com/bid/33374
+ url: http://www.securityfocus.com/bid/36956
+ url: http://www.securityfocus.com/bid/36990
+ url: http://www.securityfocus.com/bid/37995
+ url: http://www.securityfocus.com/bid/9506
+ url: http://www.securityfocus.com/bid/9561
+ url: http://www.kb.cert.org/vuls/id/867593
+ url: https://httpd.apache.org/docs/current/en/mod/core.html#traceenable
+ url: https://techcommunity.microsoft.com/t5/iis-support-blog/http-track-and-trace-verbs/ba-p/784482
+ url: https://owasp.org/www-community/attacks/Cross_Site_Tracing
+ cert-bund: CB-K14/0981
+ dfn-cert: DFN-CERT-2021-1825
+ dfn-cert: DFN-CERT-2014-1018
+ dfn-cert: DFN-CERT-2010-0020
+
+
+Issue
+-----
+NVT:    phpinfo() Output Reporting (HTTP)
+OID:    1.3.6.1.4.1.25623.1.0.11229
+Threat: Medium (CVSS: 5.3)
+Port:   80/tcp
+
+Summary:
+Reporting of files containing the output of the phpinfo() PHP
+  function previously detected via HTTP.
+
+Vulnerability Detection Result:
+The following files are calling the function phpinfo() which disclose potentiall!
+y sensitive information:
+http://192.168.91.136/info.php
+Concluded from:
+  <title>phpinfo()</title><meta name="ROBOTS" content="NOINDEX,NOFOLLOW,NOARCHIV!
+E" /></head>
+  <tr><td class="e">Configuration File (php.ini) Path </td><td class="v">/etc/ph!
+p/7.2/apache2 </td></tr>
+  <h2>PHP Variables</h2>
+
+Impact:
+Some of the information that can be gathered from this file
+  includes:
+  The username of the user running the PHP process, if it is a sudo user, the IP!
+ address of the
+  host, the web server version, the system version (Unix, Linux, Windows, ...), !
+and the root
+  directory of the web server.
+
+Solution:
+Solution type: Workaround
+Delete the listed files or restrict access to them.
+
+Affected Software/OS:
+All systems exposing a file containing the output of the
+  phpinfo() PHP function.
+  This VT is also reporting if an affected endpoint for the following products h!
+ave been identified:
+  - CVE-2008-0149: TUTOS
+  - CVE-2023-49282, CVE-2023-49283: Microsoft Graph PHP SDK
+  - CVE-2024-10486: Google for WooCommerce plugin for WordPress
+
+Vulnerability Insight:
+Many PHP installation tutorials instruct the user to create a
+  file called phpinfo.php or similar containing the phpinfo() statement. Such a !
+file is often left
+  back in the webserver directory.
+
+Vulnerability Detection Method:
+This script reports files identified by the following separate
+  VT: 'phpinfo() Output Detection (HTTP)' (OID: 1.3.6.1.4.1.25623.1.0.108474).
+Details:
+phpinfo() Output Reporting (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.11229)
+Version used: 2025-07-09T05:43:50Z
+
+References:
+ cve: CVE-2008-0149
+ cve: CVE-2023-49282
+ cve: CVE-2023-49283
+ cve: CVE-2024-10486
+ url: https://www.php.net/manual/en/function.phpinfo.php
+ url: https://beaglesecurity.com/blog/vulnerability/revealing-phpinfo.html
+
+
+Issue
+-----
+NVT:    SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)
+OID:    1.3.6.1.4.1.25623.1.0.117761
+Threat: Medium (CVSS: 5.0)
+Port:   3306/tcp
+
+Summary:
+The remote SSL/TLS service is prone to a denial of service (DoS)
+  vulnerability.
+
+Vulnerability Detection Result:
+The following indicates that the remote SSL/TLS service is affected:
+Protocol Version | Successful re-done SSL/TLS handshakes (Renegotiation) over an!
+ existing / already established SSL/TLS connection
+--------------------------------------------------------------------------------!
+--------------------------------------------------
+TLSv1.0          | 10
+TLSv1.1          | 10
+TLSv1.2          | 10
+
+Impact:
+The flaw might make it easier for remote attackers to cause a
+  DoS (CPU consumption) by performing many renegotiations within a single connec!
+tion.
+
+Solution:
+Solution type: VendorFix
+Users should contact their vendors for specific patch information.
+  A general solution is to remove/disable renegotiation capabilities altogether !
+from/in the affected
+  SSL/TLS service.
+
+Affected Software/OS:
+Every SSL/TLS service which does not properly restrict
+  client-initiated renegotiation.
+
+Vulnerability Insight:
+The flaw exists because the remote SSL/TLS service does not
+  properly restrict client-initiated renegotiation within the SSL and TLS protoc!
+ols.
+  Note: The referenced CVEs are affecting OpenSSL and Mozilla Network Security S!
+ervices (NSS) but
+  both are in a DISPUTED state with the following rationale:
+  > It can also be argued that it is the responsibility of server deployments, n!
+ot a security
+  library, to prevent or limit renegotiation when it is inappropriate within a s!
+pecific environment.
+  Both CVEs are still kept in this VT as a reference to the origin of this flaw.
+
+Vulnerability Detection Method:
+Checks if the remote service allows to re-do the same SSL/TLS
+  handshake (Renegotiation) over an existing / already established SSL/TLS conne!
+ction.
+Details:
+SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)
+(OID: 1.3.6.1.4.1.25623.1.0.117761)
+Version used: 2024-09-27T05:05:23Z
+
+References:
+ cve: CVE-2011-1473
+ cve: CVE-2011-5094
+ url: https://web.archive.org/web/20211201133213/https://orchilles.com/ssl-renegotiation-dos/
+ url: https://mailarchive.ietf.org/arch/msg/tls/wdg46VE_jkYBbgJ5yE4P9nQ-8IU/
+ url: https://vincent.bernat.ch/en/blog/2011-ssl-dos-mitigation
+ url: https://www.openwall.com/lists/oss-security/2011/07/08/2
+ cert-bund: WID-SEC-2026-0180
+ cert-bund: WID-SEC-2024-1591
+ cert-bund: WID-SEC-2024-0796
+ cert-bund: WID-SEC-2023-1435
+ cert-bund: CB-K17/0980
+ cert-bund: CB-K17/0979
+ cert-bund: CB-K14/0772
+ cert-bund: CB-K13/0915
+ cert-bund: CB-K13/0462
+ dfn-cert: DFN-CERT-2025-0933
+ dfn-cert: DFN-CERT-2017-1013
+ dfn-cert: DFN-CERT-2017-1012
+ dfn-cert: DFN-CERT-2014-0809
+ dfn-cert: DFN-CERT-2013-1928
+ dfn-cert: DFN-CERT-2012-1112
+
+
+Issue
+-----
+NVT:    Telnet Unencrypted Cleartext Login
+OID:    1.3.6.1.4.1.25623.1.0.108522
+Threat: Medium (CVSS: 4.8)
+Port:   23/tcp
+
+Summary:
+The remote host is running a Telnet service that allows cleartext logins over
+  unencrypted connections.
+
+Vulnerability Detection Result:
+Vulnerability was detected according to the Vulnerability Detection Method.
+
+Impact:
+An attacker can uncover login names and passwords by sniffing traffic to the
+  Telnet service.
+
+Solution:
+Solution type: Mitigation
+Replace Telnet with a protocol like SSH which supports encrypted connections.
+
+Vulnerability Detection Method:
+Details:
+Telnet Unencrypted Cleartext Login
+(OID: 1.3.6.1.4.1.25623.1.0.108522)
+Version used: 2023-10-13T05:06:09Z
+
+
+Issue
+-----
+NVT:    FTP Unencrypted Cleartext Login
+OID:    1.3.6.1.4.1.25623.1.0.108528
+Threat: Medium (CVSS: 4.8)
+Port:   21/tcp
+
+Summary:
+The remote host is running a FTP service that allows cleartext logins over
+  unencrypted connections.
+
+Vulnerability Detection Result:
+The remote FTP service accepts logins without a previous sent 'AUTH TLS' command!
+. Response(s):
+Non-anonymous sessions: 331 Password required for openvasvt
+Anonymous sessions:     331 Password required for anonymous
+
+Impact:
+An attacker can uncover login names and passwords by sniffing traffic to the
+  FTP service.
+
+Solution:
+Solution type: Mitigation
+Enable FTPS or enforce the connection via the 'AUTH TLS' command. Please see
+  the manual of the FTP service for more information.
+
+Vulnerability Detection Method:
+Tries to login to a non FTPS enabled FTP service without sending a
+  'AUTH TLS' command first and checks if the service is accepting the login with!
+out enforcing the use of
+  the 'AUTH TLS' command.
+Details:
+FTP Unencrypted Cleartext Login
+(OID: 1.3.6.1.4.1.25623.1.0.108528)
+Version used: 2023-12-20T05:05:58Z
+
+
+Issue
+-----
+NVT:    SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection
+OID:    1.3.6.1.4.1.25623.1.0.117274
+Threat: Medium (CVSS: 4.3)
+Port:   3306/tcp
+
+Product detection result: cpe:/a:ietf:transport_layer_security:1.0
+Detected by: SSL/TLS: Version Detection (OID: 1.3.6.1.4.1.25623.1.0.105782)
+
+Summary:
+It was possible to detect the usage of the deprecated TLSv1.0
+  and/or TLSv1.1 protocol on this system.
+
+Vulnerability Detection Result:
+In addition to TLSv1.2+ the service is also providing the deprecated TLSv1.0 and!
+ TLSv1.1 protocols and supports one or more ciphers. Those supported ciphers can!
+ be found in the 'SSL/TLS: Report Supported Cipher Suites' (OID: 1.3.6.1.4.1.256!
+23.1.0.802067) VT.
+
+Impact:
+An attacker might be able to use the known cryptographic flaws to
+  eavesdrop the connection between clients and the service to get access to sens!
+itive data
+  transferred within the secured connection.
+  Furthermore newly uncovered vulnerabilities in this protocols won't receive se!
+curity updates
+  anymore.
+
+Solution:
+Solution type: Mitigation
+It is recommended to disable the deprecated TLSv1.0 and/or
+  TLSv1.1 protocols in favor of the TLSv1.2+ protocols.
+  Please see the references for more resources supporting you with this task.
+
+Affected Software/OS:
+- All services providing an encrypted communication using the
+  TLSv1.0 and/or TLSv1.1 protocols
+  - CVE-2023-41928: Kiloview P1 4G and P2 4G Video Encoder
+  - CVE-2024-41270: Gorush v1.18.4
+  - CVE-2025-3200: Multiple products from Wiesemann & Theis
+
+Vulnerability Insight:
+The TLSv1.0 and TLSv1.1 protocols contain known cryptographic
+  flaws like:
+  - CVE-2011-3389: Browser Exploit Against SSL/TLS (BEAST)
+  - CVE-2015-0204: Factoring Attack on RSA-EXPORT Keys Padding Oracle On Downgra!
+ded Legacy
+  Encryption (FREAK)
+
+Vulnerability Detection Method:
+Checks the used TLS protocols of the services provided by this
+  system.
+Details:
+SSL/TLS: Deprecated TLSv1.0 and TLSv1.1 Protocol Detection
+(OID: 1.3.6.1.4.1.25623.1.0.117274)
+Version used: 2025-04-30T05:39:51Z
+
+Product Detection Result:
+Product:cpe:/a:ietf:transport_layer_security:1.0
+
+Method:SSL/TLS: Version Detection
+(OID: 1.3.6.1.4.1.25623.1.0.105782)
+
+References:
+ cve: CVE-2011-3389
+ cve: CVE-2015-0204
+ cve: CVE-2023-41928
+ cve: CVE-2024-41270
+ cve: CVE-2025-3200
+ url: https://ssl-config.mozilla.org
+ url: https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Publications/TechGuidelines/TG02102/BSI-TR-02102-1.html
+ url: https://www.bsi.bund.de/EN/Themen/Oeffentliche-Verwaltung/Mindeststandards/TLS-Protokoll/TLS-Protokoll_node.html
+ url: https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR03116/BSI-TR-03116-4.html
+ url: https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Mindeststandards/Mindeststandard_BSI_TLS_Version_2_4.html
+ url: https://web.archive.org/web/20240113175943/https://www.bettercrypto.org
+ url: https://www.enisa.europa.eu/publications/algorithms-key-size-and-parameters-report-2014
+ url: https://datatracker.ietf.org/doc/rfc8996/
+ url: https://vnhacker.blogspot.com/2011/09/beast.html
+ url: https://web.archive.org/web/20201108095603/https://censys.io/blog/freak
+ url: https://certvde.com/en/advisories/VDE-2025-031/
+ url: https://gist.github.com/nyxfqq/cfae38fada582a0f576d154be1aeb1fc
+ url: https://advisories.ncsc.nl/advisory?id=NCSC-2024-0273
+ cert-bund: WID-SEC-2026-0180
+ cert-bund: WID-SEC-2023-1435
+ cert-bund: CB-K18/0799
+ cert-bund: CB-K16/1289
+ cert-bund: CB-K16/1096
+ cert-bund: CB-K15/1751
+ cert-bund: CB-K15/1266
+ cert-bund: CB-K15/0850
+ cert-bund: CB-K15/0764
+ cert-bund: CB-K15/0720
+ cert-bund: CB-K15/0548
+ cert-bund: CB-K15/0526
+ cert-bund: CB-K15/0509
+ cert-bund: CB-K15/0493
+ cert-bund: CB-K15/0384
+ cert-bund: CB-K15/0365
+ cert-bund: CB-K15/0364
+ cert-bund: CB-K15/0302
+ cert-bund: CB-K15/0192
+ cert-bund: CB-K15/0079
+ cert-bund: CB-K15/0016
+ cert-bund: CB-K14/1342
+ cert-bund: CB-K14/0231
+ cert-bund: CB-K13/0845
+ cert-bund: CB-K13/0796
+ cert-bund: CB-K13/0790
+ dfn-cert: DFN-CERT-2020-0177
+ dfn-cert: DFN-CERT-2020-0111
+ dfn-cert: DFN-CERT-2019-0068
+ dfn-cert: DFN-CERT-2018-1441
+ dfn-cert: DFN-CERT-2018-1408
+ dfn-cert: DFN-CERT-2016-1372
+ dfn-cert: DFN-CERT-2016-1164
+ dfn-cert: DFN-CERT-2016-0388
+ dfn-cert: DFN-CERT-2015-1853
+ dfn-cert: DFN-CERT-2015-1332
+ dfn-cert: DFN-CERT-2015-0884
+ dfn-cert: DFN-CERT-2015-0800
+ dfn-cert: DFN-CERT-2015-0758
+ dfn-cert: DFN-CERT-2015-0567
+ dfn-cert: DFN-CERT-2015-0544
+ dfn-cert: DFN-CERT-2015-0530
+ dfn-cert: DFN-CERT-2015-0396
+ dfn-cert: DFN-CERT-2015-0375
+ dfn-cert: DFN-CERT-2015-0374
+ dfn-cert: DFN-CERT-2015-0305
+ dfn-cert: DFN-CERT-2015-0199
+ dfn-cert: DFN-CERT-2015-0079
+ dfn-cert: DFN-CERT-2015-0021
+ dfn-cert: DFN-CERT-2014-1414
+ dfn-cert: DFN-CERT-2013-1847
+ dfn-cert: DFN-CERT-2013-1792
+ dfn-cert: DFN-CERT-2012-1979
+ dfn-cert: DFN-CERT-2012-1829
+ dfn-cert: DFN-CERT-2012-1530
+ dfn-cert: DFN-CERT-2012-1380
+ dfn-cert: DFN-CERT-2012-1377
+ dfn-cert: DFN-CERT-2012-1292
+ dfn-cert: DFN-CERT-2012-1214
+ dfn-cert: DFN-CERT-2012-1213
+ dfn-cert: DFN-CERT-2012-1180
+ dfn-cert: DFN-CERT-2012-1156
+ dfn-cert: DFN-CERT-2012-1155
+ dfn-cert: DFN-CERT-2012-1039
+ dfn-cert: DFN-CERT-2012-0956
+ dfn-cert: DFN-CERT-2012-0908
+ dfn-cert: DFN-CERT-2012-0868
+ dfn-cert: DFN-CERT-2012-0867
+ dfn-cert: DFN-CERT-2012-0848
+ dfn-cert: DFN-CERT-2012-0838
+ dfn-cert: DFN-CERT-2012-0776
+ dfn-cert: DFN-CERT-2012-0722
+ dfn-cert: DFN-CERT-2012-0638
+ dfn-cert: DFN-CERT-2012-0627
+ dfn-cert: DFN-CERT-2012-0451
+ dfn-cert: DFN-CERT-2012-0418
+ dfn-cert: DFN-CERT-2012-0354
+ dfn-cert: DFN-CERT-2012-0234
+ dfn-cert: DFN-CERT-2012-0221
+ dfn-cert: DFN-CERT-2012-0177
+ dfn-cert: DFN-CERT-2012-0170
+ dfn-cert: DFN-CERT-2012-0146
+ dfn-cert: DFN-CERT-2012-0142
+ dfn-cert: DFN-CERT-2012-0126
+ dfn-cert: DFN-CERT-2012-0123
+ dfn-cert: DFN-CERT-2012-0095
+ dfn-cert: DFN-CERT-2012-0051
+ dfn-cert: DFN-CERT-2012-0047
+ dfn-cert: DFN-CERT-2012-0021
+ dfn-cert: DFN-CERT-2011-1953
+ dfn-cert: DFN-CERT-2011-1946
+ dfn-cert: DFN-CERT-2011-1844
+ dfn-cert: DFN-CERT-2011-1826
+ dfn-cert: DFN-CERT-2011-1774
+ dfn-cert: DFN-CERT-2011-1743
+ dfn-cert: DFN-CERT-2011-1738
+ dfn-cert: DFN-CERT-2011-1706
+ dfn-cert: DFN-CERT-2011-1628
+ dfn-cert: DFN-CERT-2011-1627
+ dfn-cert: DFN-CERT-2011-1619
+ dfn-cert: DFN-CERT-2011-1482
+
+
+Issue
+-----
+NVT:    Weak Encryption Algorithm(s) Supported (SSH)
+OID:    1.3.6.1.4.1.25623.1.0.105611
+Threat: Medium (CVSS: 4.3)
+Port:   22/tcp
+
+Product detection result: cpe:/a:ietf:secure_shell_protocol
+Detected by: SSH Protocol Algorithms Supported (OID: 1.3.6.1.4.1.25623.1.0.105565)
+
+Summary:
+The remote SSH server is configured to allow / support weak
+  encryption algorithm(s).
+
+Vulnerability Detection Result:
+The remote SSH server supports the following weak client-to-server encryption al!
+gorithm(s):
+3des-cbc
+aes128-cbc
+aes256-cbc
+The remote SSH server supports the following weak server-to-client encryption al!
+gorithm(s):
+3des-cbc
+aes128-cbc
+aes256-cbc
+
+Solution:
+Solution type: Mitigation
+Disable the reported weak encryption algorithm(s).
+
+Vulnerability Insight:
+- The 'arcfour' cipher is the Arcfour stream cipher with 128-bit
+  keys. The Arcfour cipher is believed to be compatible with the RC4 cipher [SCH!
+NEIER]. Arcfour
+  (and RC4) has problems with weak keys, and should not be used anymore.
+  - The 'none' algorithm specifies that no encryption is to be done. Note that t!
+his method provides
+  no confidentiality protection, and it is NOT RECOMMENDED to use it.
+  - A vulnerability exists in SSH messages that employ CBC mode that may allow a!
+n attacker to
+  recover plaintext from a block of ciphertext.
+
+Vulnerability Detection Method:
+Checks the supported encryption algorithms (client-to-server
+  and server-to-client) of the remote SSH server.
+  Currently weak encryption algorithms are defined as the following:
+  - Arcfour (RC4) cipher based algorithms
+  - 'none' algorithm
+  - CBC mode cipher based algorithms
+Details:
+Weak Encryption Algorithm(s) Supported (SSH)
+(OID: 1.3.6.1.4.1.25623.1.0.105611)
+Version used: 2024-06-14T05:05:48Z
+
+Product Detection Result:
+Product:cpe:/a:ietf:secure_shell_protocol
+
+Method:SSH Protocol Algorithms Supported
+(OID: 1.3.6.1.4.1.25623.1.0.105565)
+
+References:
+ url: https://www.rfc-editor.org/rfc/rfc8758
+ url: https://www.kb.cert.org/vuls/id/958563
+ url: https://www.rfc-editor.org/rfc/rfc4253#section-6.3
+
+
+Issue
+-----
+NVT:    Weak MAC Algorithm(s) Supported (SSH)
+OID:    1.3.6.1.4.1.25623.1.0.105610
+Threat: Low (CVSS: 2.6)
+Port:   22/tcp
+
+Product detection result: cpe:/a:ietf:secure_shell_protocol
+Detected by: SSH Protocol Algorithms Supported (OID: 1.3.6.1.4.1.25623.1.0.105565)
+
+Summary:
+The remote SSH server is configured to allow / support weak MAC
+  algorithm(s).
+
+Vulnerability Detection Result:
+The remote SSH server supports the following weak client-to-server MAC algorithm!
+(s):
+hmac-md5
+The remote SSH server supports the following weak server-to-client MAC algorithm!
+(s):
+hmac-md5
+
+Solution:
+Solution type: Mitigation
+Disable the reported weak MAC algorithm(s).
+
+Vulnerability Detection Method:
+Checks the supported MAC algorithms (client-to-server and
+  server-to-client) of the remote SSH server.
+  Currently weak MAC algorithms are defined as the following:
+  - MD5 based algorithms
+  - 96-bit based algorithms
+  - 64-bit based algorithms
+  - 'none' algorithm
+Details:
+Weak MAC Algorithm(s) Supported (SSH)
+(OID: 1.3.6.1.4.1.25623.1.0.105610)
+Version used: 2024-06-14T05:05:48Z
+
+Product Detection Result:
+Product:cpe:/a:ietf:secure_shell_protocol
+
+Method:SSH Protocol Algorithms Supported
+(OID: 1.3.6.1.4.1.25623.1.0.105565)
+
+References:
+ url: https://www.rfc-editor.org/rfc/rfc6668
+ url: https://www.rfc-editor.org/rfc/rfc4253#section-6.4
+
+
+Issue
+-----
+NVT:    TCP Timestamps Information Disclosure
+OID:    1.3.6.1.4.1.25623.1.0.80091
+Threat: Low (CVSS: 2.6)
+Port:   general/tcp
+
+Summary:
+The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.
+
+Vulnerability Detection Result:
+It was detected that the host implements RFC1323/RFC7323.
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 2794363399
+Packet 2: 2794364477
+
+Impact:
+A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.
+
+Solution:
+Solution type: Mitigation
+To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to appl!
+y the settings at
+  runtime.
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timesta!
+mps=disabled'
+  Starting with Windows Server 2008 and Vista, the timestamp can not be complete!
+ly disabled.
+  The default behavior of the TCP/IP stack on this Systems is to not use the Tim!
+estamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating co!
+mmunication includes
+  them in their synchronize (SYN) segment.
+  See the references for more information.
+
+Affected Software/OS:
+TCP implementations that implement RFC1323/RFC7323.
+
+Vulnerability Insight:
+The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.
+
+Vulnerability Detection Method:
+Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If foun!
+d, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+
+References:
+ url: https://datatracker.ietf.org/doc/html/rfc1323
+ url: https://datatracker.ietf.org/doc/html/rfc7323
+ url: https://web.archive.org/web/20151213072445/http://www.microsoft.com/en-us/download/details.aspx?id=9152
+ url: https://www.fortiguard.com/psirt/FG-IR-16-090
+
+
+Issue
+-----
+NVT:    ICMP Timestamp Reply Information Disclosure
+OID:    1.3.6.1.4.1.25623.1.0.103190
+Threat: Low (CVSS: 2.1)
+Port:   general/icmp
+
+Summary:
+The remote host responded to an ICMP timestamp request.
+
+Vulnerability Detection Result:
+The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+
+Impact:
+This information could theoretically be used to exploit weak
+  time-based random number generators in other services.
+
+Solution:
+Solution type: Mitigation
+Various mitigations are possible:
+  - Disable the support for ICMP timestamp on the remote host completely
+  - Protect the remote host by a firewall, and block ICMP packets passing throug!
+h the firewall in
+  either direction (either completely or only for untrusted networks)
+
+Vulnerability Insight:
+The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender!
+ of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.
+
+Vulnerability Detection Method:
+Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+
+References:
+ cve: CVE-1999-0524
+ url: https://datatracker.ietf.org/doc/html/rfc792
+ url: https://datatracker.ietf.org/doc/html/rfc2780
+ cert-bund: CB-K15/1514
+ cert-bund: CB-K14/0632
+ dfn-cert: DFN-CERT-2014-0658
+
+

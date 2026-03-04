@@ -1,0 +1,172 @@
+I Summary
+=========
+
+This document reports on the results of an automatic security scan.
+The report first summarises the results found.
+Then, for each host, the report describes every issue found.
+Please consider the advice given in each description, in order to rectify
+the issue.
+
+All dates are displayed using the timezone "Coordinated Universal Time",
+which is abbreviated "UTC".
+
+Vendor security updates are not trusted.
+
+Overrides are off.  Even when a result has an override, this report uses
+the actual threat of the result.
+
+Notes are included in the report.Information on overrides is included in the report.
+
+This report might not show details of all issues that were found.
+Issues with the threat level "Log" are not shown.
+Issues with the threat level "Debug" are not shown.
+Issues with the threat level "False Positive" are not shown.
+Only results with a minimum QoD of 70 are shown.
+
+This report contains all 2 results selected by the
+filtering described above.  Before filtering there were 106 results.
+
+Scan started: Tue Mar 3 10:26:23 2026 UTC
+Scan ended:   Tue Mar 3 10:51:37 2026 UTC
+Task:         INFOTACT WEEK-4 AFTER REMEDIATION SCAN
+
+Host Summary
+************
+
+Host            Critical  High  Medium  Low  Log  False Positive
+192.168.91.136         0     0       2    0    0               0    UBUNTU
+Total: 1               0     0       2    0    0               0
+
+
+II Results per Host
+===================
+
+Host 192.168.91.136
+*******************
+
+Scanning of this host started at: Tue Mar 3 10:29:13 2026 UTC
+Number of results: 2
+
+Port Summary for Host 192.168.91.136
+------------------------------------
+
+Service (Port)          Threat Level
+80/tcp                  Medium (CVSS: 5.8)
+21/tcp                  Medium (CVSS: 4.8)
+
+Security Issues for Host 192.168.91.136
+---------------------------------------
+
+Issue
+-----
+NVT:    HTTP Debugging Methods (TRACE/TRACK) Enabled
+OID:    1.3.6.1.4.1.25623.1.0.11213
+Threat: Medium (CVSS: 5.8)
+Port:   80/tcp
+
+Summary:
+The remote web server supports the TRACE and/or TRACK
+  methods. TRACE and TRACK are HTTP methods which are used to debug web server c!
+onnections.
+
+Vulnerability Detection Result:
+The web server has the following HTTP methods enabled: TRACE
+
+Impact:
+An attacker may use this flaw to trick your legitimate web
+  users to give him their credentials.
+
+Solution:
+Solution type: Mitigation
+Disable the TRACE and TRACK methods in your web server
+  configuration.
+  Please see the manual of your web server or the references for more informatio!
+n.
+
+Affected Software/OS:
+Web servers with enabled TRACE and/or TRACK methods.
+
+Vulnerability Insight:
+It has been shown that web servers supporting this methods
+  are subject to cross-site-scripting attacks, dubbed XST for Cross-Site-Tracing!
+, when used in
+  conjunction with various weaknesses in browsers.
+
+Vulnerability Detection Method:
+Checks if HTTP methods such as TRACE and TRACK are
+  enabled and can be used.
+Details:
+HTTP Debugging Methods (TRACE/TRACK) Enabled
+(OID: 1.3.6.1.4.1.25623.1.0.11213)
+Version used: 2023-08-01T13:29:10Z
+
+References:
+ cve: CVE-2003-1567
+ cve: CVE-2004-2320
+ cve: CVE-2004-2763
+ cve: CVE-2005-3398
+ cve: CVE-2006-4683
+ cve: CVE-2007-3008
+ cve: CVE-2008-7253
+ cve: CVE-2009-2823
+ cve: CVE-2010-0386
+ cve: CVE-2012-2223
+ cve: CVE-2014-7883
+ url: http://www.kb.cert.org/vuls/id/288308
+ url: http://www.securityfocus.com/bid/11604
+ url: http://www.securityfocus.com/bid/15222
+ url: http://www.securityfocus.com/bid/19915
+ url: http://www.securityfocus.com/bid/24456
+ url: http://www.securityfocus.com/bid/33374
+ url: http://www.securityfocus.com/bid/36956
+ url: http://www.securityfocus.com/bid/36990
+ url: http://www.securityfocus.com/bid/37995
+ url: http://www.securityfocus.com/bid/9506
+ url: http://www.securityfocus.com/bid/9561
+ url: http://www.kb.cert.org/vuls/id/867593
+ url: https://httpd.apache.org/docs/current/en/mod/core.html#traceenable
+ url: https://techcommunity.microsoft.com/t5/iis-support-blog/http-track-and-trace-verbs/ba-p/784482
+ url: https://owasp.org/www-community/attacks/Cross_Site_Tracing
+ cert-bund: CB-K14/0981
+ dfn-cert: DFN-CERT-2021-1825
+ dfn-cert: DFN-CERT-2014-1018
+ dfn-cert: DFN-CERT-2010-0020
+
+
+Issue
+-----
+NVT:    FTP Unencrypted Cleartext Login
+OID:    1.3.6.1.4.1.25623.1.0.108528
+Threat: Medium (CVSS: 4.8)
+Port:   21/tcp
+
+Summary:
+The remote host is running a FTP service that allows cleartext logins over
+  unencrypted connections.
+
+Vulnerability Detection Result:
+The remote FTP service accepts logins without a previous sent 'AUTH TLS' command!
+. Response(s):
+Non-anonymous sessions: 331 Password required for openvasvt
+Anonymous sessions:     331 Password required for anonymous
+
+Impact:
+An attacker can uncover login names and passwords by sniffing traffic to the
+  FTP service.
+
+Solution:
+Solution type: Mitigation
+Enable FTPS or enforce the connection via the 'AUTH TLS' command. Please see
+  the manual of the FTP service for more information.
+
+Vulnerability Detection Method:
+Tries to login to a non FTPS enabled FTP service without sending a
+  'AUTH TLS' command first and checks if the service is accepting the login with!
+out enforcing the use of
+  the 'AUTH TLS' command.
+Details:
+FTP Unencrypted Cleartext Login
+(OID: 1.3.6.1.4.1.25623.1.0.108528)
+Version used: 2023-12-20T05:05:58Z
+
+

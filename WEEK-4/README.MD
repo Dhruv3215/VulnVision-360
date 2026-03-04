@@ -116,6 +116,8 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 | [cis_remediation.yml](cis_remediation.yml) | cis_level_1 remediation playbook |
 | [other_remediation.sh](other_remediation.sh) | Other remediation bash script  |
 | [Final docx report](Final_report.docx) | Final DOCX script |
+| Re-scan output file | uploaded in week wise folder |
+
 
 ## Gate Check Status
 

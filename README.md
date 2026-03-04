@@ -279,7 +279,7 @@ sudo oscap xccdf eval \
 | `--results` | Save XML results  |
 | `--report` | Generate HTML report |
 
-**Step 2 — Standard Profile Scan **
+**Step 2 — Standard Profile Scan**
 ```
 sudo oscap xccdf eval \
   --profile xccdf_org.ssgproject.content_profile_standard \
@@ -498,6 +498,7 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 > *"In the dynamic field of Cybersecurity, you are only as strong as your weakest configuration. Diligence in documentation is paramount. Document every rule, every policy, every firewall exception, and every port you open."*
 >
 > **Trust No One. Verify Everything.**
+
 
 
 

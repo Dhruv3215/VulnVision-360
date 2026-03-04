@@ -91,11 +91,14 @@ Solution :-
 
 1. Download [nmap.sh](WEEK-1/nmap.sh) and [bootstrap.xsl](WEEK-1/bootstrap.xsl) file
 2. Give my script executable permission
+
     > sudo chmod +x nmap.sh
 4. Now run my script with sudo permission
+
     > sudo ./nmap.sh <YOUR-NETWORK-IP-WITH-CIDER>
 
 Note :- You can use this script with file contains target ips or more.
+    
     > sudo ./nmap.sh target.txt
 
 ### 📝 Input File Format (targets.txt)
@@ -495,6 +498,7 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 > *"In the dynamic field of Cybersecurity, you are only as strong as your weakest configuration. Diligence in documentation is paramount. Document every rule, every policy, every firewall exception, and every port you open."*
 >
 > **Trust No One. Verify Everything.**
+
 
 
 

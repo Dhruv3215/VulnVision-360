@@ -21,7 +21,7 @@ Auth: SMB Success (Port 445) | SSH Login Failure (Port 22, user: sysadmin)
 ```
 
 ## Kindly show this video for step-by-step process for authorized and unauthorized scanning.
-[![Click on image](WEEK-2/example.png)](https://drive.google.com/file/d/13oiRit1PjAVD0P6R230T7MjyFA1VsnVy/view?usp=drive_link)
+[![Click on image](example.png)](https://drive.google.com/file/d/13oiRit1PjAVD0P6R230T7MjyFA1VsnVy/view?usp=drive_link)
 
 
 ### Results — Before Remediation

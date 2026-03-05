@@ -453,7 +453,7 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 | [cis_remediation.sh](WEEK-4/cis_remediation.sh) | cis_level_1 remediation bash script  |
 | [cis_remediation.yml](WEEK-4/cis_remediation.yml) | cis_level_1 remediation playbook |
 | [other_remediation.sh](WEEK-4/other_remediation.sh) | Other remediation bash script  |
-| [Final docx report](WEEK-4/Final_report.docx) | Final DOCX script |
+| [Final PDF report](WEEK-4/Final_report.pdf) | Final PDF report |
 | Re-scan output file | uploaded in week wise folder |
 
 ## Gate Check Status
@@ -499,6 +499,7 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 > *"In the dynamic field of Cybersecurity, you are only as strong as your weakest configuration. Diligence in documentation is paramount. Document every rule, every policy, every firewall exception, and every port you open."*
 >
 > **Trust No One. Verify Everything.**
+
 
 
 

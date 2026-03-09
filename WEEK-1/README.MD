@@ -74,7 +74,7 @@ Solution :-
 2. Give my script executable permission
    > sudo chmod +x nmap.sh
 3. Now run my script with sudo permission
-   > sudo ./nmap.sh <YOUR-NETWORK-IP-WITH-CIDER>
+   > sudo ./nmap.sh <YOUR-NETWORK-IP-WITH-CIDR>
 
 Note :- You can use this script with file contains target ips or more.
   > sudo ./nmap.sh target.txt

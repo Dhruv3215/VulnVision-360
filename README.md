@@ -33,7 +33,7 @@ IP: 192.168.91.136
 ### Installed `OPENVAS` and `NMAP` packages on the kali machine.
 
 1. INSTALL BOTH PACKAGES
-   > sudo apt install openvas nmap xsltoproc
+   > sudo apt install openvas nmap xsltproc
 
 2. SETTING UP THE OPENVAS
     > sudo gvm-setup
@@ -499,6 +499,7 @@ ansible-playbook -i ~/inventory.ini cis_remediation.yml
 > *"In the dynamic field of Cybersecurity, you are only as strong as your weakest configuration. Diligence in documentation is paramount. Document every rule, every policy, every firewall exception, and every port you open."*
 >
 > **Trust No One. Verify Everything.**
+
 
 
 
